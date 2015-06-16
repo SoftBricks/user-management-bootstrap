@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<template name="umShowUsers">
+    <div class="um list-group">
+        {{#each users}}
+            <div class="list-group-item">
+                {{! handlebars-comments-remove-this-complete-line - Note: Below the 'gravatar' is exclusive for SoftBricks and not for MEP
+                <div>
+                    <img src="{{gravatar}}
+                    {{! handlebars-comments-remove-this-complete-line
+                    " alt="" class="circle">
+                </div>
+                }}
+                <div>
+                    <div class="primary">{{this.profile.fullname}}</div>
+                    <div class="secondary">{{this.username}} - {{#each this.emails}}{{address}}{{/each}}</div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</template>
+<template name="umShowUsersToolbar">
+    {{_ 'users'}}
+</template>
