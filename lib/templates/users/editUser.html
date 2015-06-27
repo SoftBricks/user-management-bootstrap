@@ -12,11 +12,17 @@
                     {{> afFieldInput name="username" autocomplete="off" value=this.username class="validate"}}
                     <label class="active" for="username">Username</label>
                 </div>
+                {{#if isInRole 'admin,superAdmin'}}
                 <div class="input-field col s12 m12 l12 list-group-item">
                     <i class="mdi-communication-email prefix"></i>
                     {{> afFieldInput name="emails.0.address" autocomplete="off" value=email class="validate"}}
                     <label class="active" for="email">Email</label>
+                </div><div class="input-field col s12 m12 l12 list-group-item">
+                    <i class="mdi-communication-email prefix"></i>
+                    {{> afFieldInput name="emails.0.verified" autocomplete="off" value=email class="validate"}}
+                    <label class="active" for="email">Email verifiziert</label>
                 </div>
+                {{/if}}
             </div>
 
                 <!--{{#if isInRole 'admin,superAdmin'}}-->
@@ -43,9 +49,9 @@
 
             <div class="um list-group">
                 <div class="list-group-item">
-                    <button id="updateUser" type="submit" class="btn btn-primary">{{save}}</button>
+                    <button type="submit" class="btn btn-primary">{{save}}</button>
                     {{#if isInRole 'admin,superAdmin'}}
-                        <button id="removeUser" type="click" class="btn btn-primary">{{remove}}</button>
+                        <button type="click" class="btn btn-primary">{{remove}}</button>
                     {{/if}}
                 </div>
             </div>
