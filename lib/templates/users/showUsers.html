@@ -1,14 +1,22 @@
 <template name="umShowUsers">
     <div class="um list-group">
+
+        <!-- Temporary -->
+        {{#if isInRole 'admin,superAdmin'}}
+            <div>
+                <button id="goTo_addUser">Create New User</button>
+            </div>
+        {{/if}}
+
         {{#each users}}
             <div class="list-group-item">
                 {{! handlebars-comments-remove-this-complete-line - Note: Below the 'gravatar' is exclusive for SoftBricks and not for MEP
                 <div>
                     <img src="{{gravatar}}
-                    {{! handlebars-comments-remove-this-complete-line
-                    " alt="" class="circle">
-                </div>
-                }}
+                {{! handlebars-comments-remove-this-complete-line
+                " alt="" class="circle">
+            </div>
+            }}
                 <div>
                     <div class="primary">{{this.profile.fullname}}</div>
                     <div class="secondary">{{this.username}} - {{#each this.emails}}{{address}}{{/each}}</div>

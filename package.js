@@ -31,9 +31,7 @@ Package.onUse(function(api) {
     api.addFiles(['lib/templates/users/editUser.html'], 'client');
     api.addFiles(['lib/templates/users/editUser.js'], 'client');
 
-/*
     api.addFiles(['lib/templates/users/createUser.html'], 'client');
     api.addFiles(['lib/templates/users/createUser.js'], 'client');
-*/
 
 });

@@ -1,6 +1,10 @@
 <template name="umEditUser">
     {{#with user}}
         {{#autoForm collection=users doc=this id="editUserForm" type="update" validation="keyup" class="col s12 l12"}}
+
+            <!-- Temporary go back -->
+            <button id="goBackTo_showUser">Go back to User Information</button>
+
             <div class="um list-group">
                 <div class="input-field col s12 m12 l12 list-group-item">
                     <i class="mdi-action-perm-identity prefix"></i>
@@ -50,9 +54,10 @@
             <div class="um list-group">
                 <div class="list-group-item">
                     <button type="submit" class="btn btn-primary">{{save}}</button>
-                    {{#if isInRole 'admin,superAdmin'}}
-                        <button type="click" class="btn btn-primary">{{remove}}</button>
-                    {{/if}}
+                    <!-- CSI Test -->
+                    <!--{{#if isInRole 'admin,superAdmin'}}-->
+                        <!--<button type="click" class="btn btn-primary">{{remove}}</button>-->
+                    <!--{{/if}}-->
                 </div>
             </div>
         {{/autoForm}}
