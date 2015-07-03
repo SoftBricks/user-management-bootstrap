@@ -21,6 +21,14 @@
                 {{> afQuickField name="username" autocomplete="off"}}
             </div>
 
+            {{#if groups}}
+                {{> afQuickField name="profile.groups"}}
+            {{/if}}
+
+            {{#each globalFields}}
+                {{> afQuickField name=this.name}}
+            {{/each}}
+
             <div class="list-group-item">
                 <input type="submit" data-bind="click: okay" class="btn btn-primary" value="create">
             </div>
