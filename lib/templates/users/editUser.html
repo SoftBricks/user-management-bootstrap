@@ -1,7 +1,7 @@
 <template name="umEditUser">
     {{#with user}}
         <!-- Temporary go back -->
-        <button id="goBackTo_showUser" class="btn btn-primary">Go back to User Information</button>
+        <button id="goBackTo_showUser" class="btn btn-default">Go back to User Information</button>
         {{#autoForm collection=users doc=this id="editUserForm" type="update" validation="keyup" class="col s12 l12"}}
 
             <div class="um list-group">
