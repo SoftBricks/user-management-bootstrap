@@ -24,17 +24,6 @@
                 </div>
                 {{/if}}
                 {{#if isInRole 'admin,superAdmin'}}
-                    <!-- {{#each currentRoles}}
-                        <div class="input-field col s12 m12 l12 list-group-item">
-                        {{#if isField 'superAdmin'}}
-                            <input type="checkbox" disabled readonly id="{{this.name}}" name="roles" checked="{{userHasRight}}">
-                            <label for="admin">{{this.name}}</label>
-                        {{else}}
-                            <input type="checkbox" id="{{this.name}}" name="roles" checked="{{userHasRight}}">
-                            <label for="admin">{{this.name}}</label>
-                        {{/if}}
-                        </div>
-                    {{/each}} -->
                     <div class="input-field col s12 m12 l12 list-group-item">
                         <label class="active" for="admin">Rollen</label>
                         {{#each roles}}
