@@ -5,15 +5,16 @@
 
     {{#autoForm id="createUserForm" type="insert" collection=users class="col s12 l12"}}
 
-        <div class="form-group {{#if afFieldIsInvalid name='profile.fullname'}}has-error{{/if}}">
+    <div class="list-group">
+        <div class="form-group list-group-item {{#if afFieldIsInvalid name='profile.fullname'}}has-error{{/if}}">
             <label class="control-label">{{afFieldLabelText name='profile.fullname'}}</label>
             {{> afFieldInput name='profile.fullname' class="form-control"}}
             {{#if afFieldIsInvalid name='profile.fullname'}}
-            <span class="help-block">{{{afFieldMessage name='profile.fullname'}}}</span>
+                <span class="help-block">{{{afFieldMessage name='profile.fullname'}}}</span>
             {{/if}}
         </div>
 
-        <div class="form-group {{#if afFieldIsInvalid name='emails'}}has-error{{/if}}">
+        <div class="form-group list-group-item {{#if afFieldIsInvalid name='emails'}}has-error{{/if}}">
             <label class="control-label">{{afFieldLabelText name='emails.0.address'}}</label>
             {{> afFieldInput name='emails.0.address' class="form-control"}}
             {{#if afFieldIsInvalid name='emails'}}
@@ -21,7 +22,7 @@
             {{/if}}
         </div>
 
-        <div class="form-group {{#if afFieldIsInvalid name='username'}}has-error{{/if}}">
+        <div class="form-group list-group-item {{#if afFieldIsInvalid name='username'}}has-error{{/if}}">
             <label class="control-label">{{afFieldLabelText name='username'}}</label>
             {{> afFieldInput name='username' class="form-control"}}
             {{#if afFieldIsInvalid name='username'}}
@@ -29,8 +30,9 @@
             {{/if}}
         </div>
 
-        <div class="form-group">
+        <div class="form-group list-group-item">
             <input type="submit" class="btn btn-primary" value="{{_ 'create'}}">
         </div>
+    </div>
     {{/autoForm}}
 </template>

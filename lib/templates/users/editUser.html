@@ -5,32 +5,28 @@
         {{#autoForm collection=users doc=this id="editUserForm" type="update" validation="keyup" class="col s12 l12"}}
 
             <div class="um list-group">
-                <div class="input-field col s12 m12 l12 list-group-item">
-                    <label class="active" for="fullname">Fullname</label>
-                    {{> afFieldInput name="profile.fullname" autocomplete="off" value=this.profile.fullname class="validate"}}
+                <div class="input-field col s12 m12 l12 list-group-item"> 
+                    {{> afFormGroup name="profile.fullname" autocomplete="off" value=this.profile.fullname class="validate"}}
                 </div>
                 <div class="input-field col s12 m12 l12 list-group-item">
-                    <label class="active" for="username">Username</label>
-                    {{> afFieldInput name="username" autocomplete="off" value=this.username class="validate"}}
+                    {{> afFormGroup name="username" autocomplete="off" value=this.username class="validate"}}
                 </div>
                 {{#if isInRole 'admin,superAdmin'}}
                 <div class="input-field col s12 m12 l12 list-group-item">
-                    <label class="active" for="email">Email</label>
-                    {{> afFieldInput name="emails.0.address" autocomplete="off" value=email class="validate"}}
+                    {{> afFormGroup name="emails.0.address" autocomplete="off" value=email class="validate"}}
                 </div>
                 <div class="input-field col s12 m12 l12 list-group-item">
-                    <label class="active" for="email">Email verifiziert</label>
-                    {{> afFieldInput name="emails.0.verified" type="boolean-checkbox" class="validate"}}
+                    {{> afFormGroup name="emails.0.verified" type="boolean-checkbox" class="validate"}}
                 </div>
                 {{/if}}
                 {{#if isInRole 'admin,superAdmin'}}
                     <div class="input-field col s12 m12 l12 list-group-item">
-                        <label class="active" for="admin">Rollen</label>
+                        <label class="active" for="admin">{{_ "rules"}}</label>
                         {{#each roles}}
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" id="{{name}}" name="roles" checked="{{userHasRight}}"/>
-                                    Nutzer ist {{name}}
+                                    {{_ "UserIs"}} {{name}}
                                 </label>
                             </div>
                         {{/each}}
